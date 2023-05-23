@@ -1,23 +1,24 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;	// Åª¨ú³õ´º»İ¨Ï¥Îªº©R¦WªÅ¶¡
+ï»¿using UnityEngine;
+using UnityEngine.SceneManagement;	// è®€å–å ´æ™¯éœ€ä½¿ç”¨çš„å‘½åç©ºé–“
 
 public class MenuManager : MonoBehaviour
 {
 	/// <summary>
-	/// ³]©w¶}©l¤èªk
+	/// è¨­å®šé–‹å§‹æ–¹æ³•
 	/// </summary>
 	public void StartGame() 
 	{
-		// ³õ´ººŞ²z(¸ê®Æ).LoadScene Åª¨ú³õ´ºAPI ("³õ´º¦WºÙ");
-		SceneManager.LoadScene("¹CÀ¸³õ´º");
+		// å ´æ™¯ç®¡ç†(è³‡æ–™).LoadScene è®€å–å ´æ™¯API ("å ´æ™¯åç¨±");
+
+		SceneManager.LoadScene("éŠæˆ²å ´æ™¯");
 	}
 
 	/// <summary>
-	/// ³]©wµ²§ô¤èªk
+	/// è¨­å®šçµæŸæ–¹æ³•
 	/// </summary>
 	public void QuitGame() 
 	{
-		// À³¥Î(¸ê®Æ).Quit();Â÷¶}¤º«ØAPI
+		// æ‡‰ç”¨(è³‡æ–™).Quit();é›¢é–‹å…§å»ºAPI
 		Application.Quit();
 	}
 }
