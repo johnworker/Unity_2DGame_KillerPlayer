@@ -27,8 +27,12 @@ public class ControlSystem : MonoBehaviour
 
 	private void Move()
 	{
+		// GetAxis 取得軸向、Horizontal 水平軸向
+		float h = Input.GetAxis("Horizontal"); 
+		float v = Input.GetAxis("Vertical");
+
 		// 物理的加速度，可修改物件身上 Rigidbody2D 的加速度。
 		// 方法必須放入 Update 執行
-		rig.velocity = new Vector2(3, 0);
+		rig.velocity = new Vector2(h, v) * moveSpeed;
 	}
 }
