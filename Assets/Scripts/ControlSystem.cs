@@ -7,6 +7,11 @@ public class ControlSystem : MonoBehaviour
 
 	public Rigidbody2D rig;
 
+	[Header("動畫控制器")]
+	public Animator ani;
+	[Header("跑步參數")]
+	public string parRun = "走路開關";
+
 	private void Awake()
 	{
 		// print("1 + 2");

@@ -3997,6 +3997,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
   rig: {fileID: 1943168112}
+  ani: {fileID: 1943168107}
+  parRun: "\u8D70\u8DEF\u958B\u95DC"
 --- !u!70 &1943168111
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
