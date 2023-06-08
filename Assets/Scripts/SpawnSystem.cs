@@ -1,11 +1,11 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class SpawnSystem : MonoBehaviour
 {
-	[Header("¥Í¦¨¶¡¹j"), Range(0, 10)]
+	[Header("ç”Ÿæˆé–“éš”"), Range(0, 10)]
 	public float interval = 3.5f;
 
-	[Header("¥Í¦¨©Çª«¹w¸mª«")]
+	[Header("ç”Ÿæˆæ€ªç‰©é ç½®ç‰©")]
 	public GameObject prefabEnemy;
 
 	private void SpawnEnemy()

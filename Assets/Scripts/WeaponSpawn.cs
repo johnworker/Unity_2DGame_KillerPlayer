@@ -1,12 +1,12 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class WeaponSpawn : MonoBehaviour
 {
-	[Header("¥Í¦¨¶¡¹j"), Range(0, 10)]
+	[Header("ç”Ÿæˆé–“éš”"), Range(0, 10)]
 	public float interval = 3f;
-	[Header("¥Í¦¨ªZ¾¹¹w¸mª«")]
+	[Header("ç”Ÿæˆæ­¦å™¨é ç½®ç‰©")]
 	public GameObject prefabWeapon;
-	[Header("ªZ¾¹±À¤O")]
+	[Header("æ­¦å™¨æ¨åŠ›")]
 	public Vector2 power;
 
 	private void SpawnWeapon()
@@ -14,6 +14,8 @@ public class WeaponSpawn : MonoBehaviour
 		GameObject tempWeapon = Instantiate(prefabWeapon, transform.position, transform.rotation);
 
 		Rigidbody2D rigWeapon = tempWeapon.GetComponent<Rigidbody2D>();
+
+		rigWeapon.AddForce(power);
 	}
 
 	private void Awake()

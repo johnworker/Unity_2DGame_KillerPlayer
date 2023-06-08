@@ -1,16 +1,16 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class ControlSystem : MonoBehaviour
 {
-	[Header("²¾°Ê³t«×"), Range(0, 10)]
+	[Header("ç§»å‹•é€Ÿåº¦"), Range(0, 10)]
 	public float moveSpeed = 3.5f;
 
 	public Rigidbody2D rig;
 
-	[Header("°Êµe±±¨î¾¹")]
+	[Header("å‹•ç•«æ§åˆ¶å™¨")]
 	public Animator ani;
-	[Header("¶]¨B°Ñ¼Æ")]
-	public string parRun = "¨«¸ô¶}Ãö";
+	[Header("è·‘æ­¥åƒæ•¸")]
+	public string parRun = "èµ°è·¯é–‹é—œ";
 
 	private void Awake()
 	{
@@ -20,44 +20,44 @@ public class ControlSystem : MonoBehaviour
 
 	private void Start()
 	{
-		// print("<color=blue>¶}©l</color>");
+		// print("<color=blue>é–‹å§‹</color>");
 	}
 
 	private void Update()
 	{
-		// print("<color=#996615>°õ¦æ</color>");
+		// print("<color=#996615>åŸ·è¡Œ</color>");
 
 		Move();
 	}
 
 	private void Move()
 	{
-		// GetAxis ¨ú±o¶b¦V¡BHorizontal ¤ô¥­¶b¦V
-		// ¨t²Î§PÂ_ -1 ¨ì 1 ¤§¶¡ªºÅÜ¤Æ°µ²¾°Ê
+		// GetAxis å–å¾—è»¸å‘ã€Horizontal æ°´å¹³è»¸å‘
+		// ç³»çµ±åˆ¤æ–· -1 åˆ° 1 ä¹‹é–“çš„è®ŠåŒ–åšç§»å‹•
 		float h = Input.GetAxis("Horizontal"); 
 		float v = Input.GetAxis("Vertical");
 
-		// ª«²zªº¥[³t«×¡A¥i­×§ïª«¥ó¨­¤W Rigidbody2D ªº¥[³t«×¡C
-		// ¤èªk¥²¶·©ñ¤J Update °õ¦æ
+		// ç‰©ç†çš„åŠ é€Ÿåº¦ï¼Œå¯ä¿®æ”¹ç‰©ä»¶èº«ä¸Š Rigidbody2D çš„åŠ é€Ÿåº¦ã€‚
+		// æ–¹æ³•å¿…é ˆæ”¾å…¥ Update åŸ·è¡Œ
 		rig.velocity = new Vector2(h, v) * moveSpeed;
 
-		// ³]©w h ¤£µ¥©ó 0 ­n¨«¸ô
+		// è¨­å®š h ä¸ç­‰æ–¼ 0 è¦èµ°è·¯
 		ani.SetBool(parRun, h != 0 || v !=0);
 
 		// print(Input.GetKeyDown(KeyCode.A));
 
-		#region ­±¦V±±¨î
+		#region é¢å‘æ§åˆ¶
 		// 
 		if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
 		{
-			// print("ª±®a«ö¤UA");
+			// print("ç©å®¶æŒ‰ä¸‹A");
 			transform.eulerAngles = new Vector3(0, 180, 0);
 			// transform.localScale = new Vector3(-1, 1, 1);
 		}
 
 		if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
 		{
-			// print("ª±®a«ö¤UD");
+			// print("ç©å®¶æŒ‰ä¸‹D");
 			transform.eulerAngles = new Vector3(0, 0, 0);
 			// transform.localScale = new Vector3(1, 1, 1);
 		}
