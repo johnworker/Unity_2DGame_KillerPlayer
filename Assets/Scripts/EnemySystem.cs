@@ -10,4 +10,9 @@ public class EnemySystem : MonoBehaviour
 	{
 		player = GameObject.Find("衝鋒企鵝").transform;
 	}
+
+	private void Update()
+	{
+		transform.position = Vector3.MoveTowards(transform.position, player.position, 0.01f);
+	}
 }
