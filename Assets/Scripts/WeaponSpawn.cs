@@ -23,3 +23,4 @@ public class WeaponSpawn : MonoBehaviour
 		InvokeRepeating("SpawnWeapon", 0, interval);
 	}
 }
+
