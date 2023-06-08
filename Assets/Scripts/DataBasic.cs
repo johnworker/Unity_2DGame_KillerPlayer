@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="Leo/Data Basic")]
-public class DataName : ScriptableObject
+[CreateAssetMenu(menuName = "Leo/Data Basic")]
+public class DataBasic : ScriptableObject
 {
 	[Header("血量"), Range(0, 10000)]
 	public float hp;
@@ -11,5 +11,4 @@ public class DataName : ScriptableObject
 	public float attack;
 	[Header("移動速度"), Range(0, 100)]
 	public float moveSpeed;
-
 }
