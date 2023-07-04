@@ -8,6 +8,7 @@ public class WeaponSpawn : MonoBehaviour
 	public GameObject prefabWeapon;
 	[Header("武器推力")]
 	public Vector2 power;
+	
 
 	private void SpawnWeapon()
 	{
