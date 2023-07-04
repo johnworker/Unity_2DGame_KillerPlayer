@@ -15,6 +15,7 @@ public class WeaponSpawn : MonoBehaviour
 
 		Rigidbody2D rigWeapon = tempWeapon.GetComponent<Rigidbody2D>();
 
+
 		rigWeapon.AddForce(power);
 	}
 

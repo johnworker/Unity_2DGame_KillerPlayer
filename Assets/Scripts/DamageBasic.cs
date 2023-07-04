@@ -31,6 +31,9 @@ public class DamageBasic : MonoBehaviour
 		// 取得子物件身上的<TextMeshProUGUI> 文字元件 並更新文字為 傷害值
 
 		// 輸出誰受傷，剩多少血量。
+
+		Destroy(tempDamage, .5f);
+
 		print($"<color=#ffee64>{gameObject.name} 血量剩下：{hp}</color>");
 
 		if (hp <= 0) Dead();
