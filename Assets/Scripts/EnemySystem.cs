@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemySystem : MonoBehaviour
 {
+	[Header("敵人資料")]
+	public DataEnemy data;
+
 	private Transform player;
 
 	private void Awake()
@@ -13,6 +16,6 @@ public class EnemySystem : MonoBehaviour
 
 	private void Update()
 	{
-		transform.position = Vector3.MoveTowards(transform.position, player.position, 0.01f);
+		transform.position = Vector3.MoveTowards(transform.position, player.position, data.moveSpeed * Time.deltaTime);
 	}
 }
