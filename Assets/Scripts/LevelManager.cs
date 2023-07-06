@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour
 	private int lv = 1;
 	private float exp = 0;
 
+	public float[] expNeeds = { 100, 200, 300 };
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		// print($"<color=#6699ff>{collision.name}</color>");
@@ -24,8 +26,12 @@ public class LevelManager : MonoBehaviour
 		}
 	}
 
+
 	public void AddExp(float exp)
 	{
+		this.exp = exp;
 
+		textExp.text = this.exp + " / 100";
+		imgExp.fillAmount = this.exp / 100;
 	}
 }

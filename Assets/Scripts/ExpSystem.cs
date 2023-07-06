@@ -11,9 +11,12 @@ public class ExpSystem : MonoBehaviour
 	[Header("經驗值"), Range(0, 500)]
 	public float exp = 30;
 
+	private LevelManager levelManager;
+
 	private void Awake()
 	{
 		player = GameObject.Find("衝鋒企鵝").transform;
+		levelManager = player.GetComponent<LevelManager>();
 	}
 
 	private void Update()
@@ -22,6 +25,7 @@ public class ExpSystem : MonoBehaviour
 
 		if (Vector3.Distance(transform.position,player.position) < distanceEat)
 		{
+			levelManager.AddExp(exp);
 			Destroy(gameObject);
 		}
 	}
