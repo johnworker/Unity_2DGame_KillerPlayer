@@ -7,7 +7,7 @@ public class DataSkill : ScriptableObject
     public string skillName;
     [Header("技能圖片")]
     public Sprite skillPicture;
-    [Header("技能描述")]
+    [Header("技能描述"),TextArea(2,5)]
     public string skillDescription;
     [Header("技能等級")]
     public int skillLv;

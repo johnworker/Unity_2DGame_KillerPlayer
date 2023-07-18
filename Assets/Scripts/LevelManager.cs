@@ -17,6 +17,9 @@ public class LevelManager : MonoBehaviour
 	public GameObject goSkillUI2;
 	public GameObject goSkillUI3;
 
+	[Header("技能資料陣列")]
+	public DataSkill[] dataSkills;
+
 
 	private int lv = 1;
 	private float exp = 0;
