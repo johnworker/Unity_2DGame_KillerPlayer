@@ -4878,6 +4878,9 @@ MonoBehaviour:
   textLv: {fileID: 1738311118}
   textExp: {fileID: 1323671447}
   goLvUp: {fileID: 1238040322}
+  goSkillUI1: {fileID: 1935919989}
+  goSkillUI2: {fileID: 1891899266}
+  goSkillUI3: {fileID: 1325051521}
   expNeeds:
   - 150
   - 250
@@ -5921,7 +5924,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 20bfb617d6611904ebbaa2bcc554b250, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
