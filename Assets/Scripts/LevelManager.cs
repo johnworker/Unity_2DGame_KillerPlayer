@@ -1,6 +1,8 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;   // 使用清單List需要的命名空間
+using System.Linq;					// 處理資料
 
 public class LevelManager : MonoBehaviour
 {
@@ -13,13 +15,21 @@ public class LevelManager : MonoBehaviour
 	[Header("升級面板")]
 	public GameObject goLvUp;
 	[Header("技能1~3")]
-	public GameObject goSkillUI1;
-	public GameObject goSkillUI2;
-	public GameObject goSkillUI3;
+	public GameObject[] goSkillUI;
+
+	/// <summary>
+	/// 0 吸取經驗值
+	/// 1 斧頭攻擊
+	/// 2 斧頭間隔
+	/// 3 玩家血量
+	/// 4 移動速度
+	/// </summary>
 
 	[Header("技能資料陣列")]
 	public DataSkill[] dataSkills;
 
+	// 使用清單儲存技能資料
+	public List<DataSkill> randomSkill = new List<DataSkill>();
 
 	private int lv = 1;
 	private float exp = 0;
@@ -57,6 +67,21 @@ public class LevelManager : MonoBehaviour
 	{
 		goLvUp.SetActive(true);
 		Time.timeScale = 0;
+
+		// x.skillLv < 5 為條件; 挑出所有等級小於 5 的技能 (挑選"全部技能資料"內小於五的技能)
+		randomSkill = dataSkills.Where(x => x.skillLv < 5).ToList();
+		// Random.Range(0, 999) 為重新排序; 數字夠大即可達到隨機效果 (將"randomSkill"清單隨機排序：洗牌)
+		randomSkill = randomSkill.OrderBy(x => Random.Range(0, 999)).ToList();
+
+		// 迴圈執行三次
+		for (int i = 0; i < 3; i++)
+		{
+			// 技能選取區塊.找到名字為《技能名稱》的子物件 並更新他的文字內容 為 隨機技能的名稱
+			goSkillUI[i].transform.Find("技能名稱").GetComponent<TextMeshProUGUI>().text = randomSkill[i].skillName;
+			goSkillUI[i].transform.Find("技能描述").GetComponent<TextMeshProUGUI>().text = randomSkill[i].skillDescription;
+			goSkillUI[i].transform.Find("技能等級").GetComponent<TextMeshProUGUI>().text = "Lv" + randomSkill[i].skillLv;
+			goSkillUI[i].transform.Find("技能圖片").GetComponent<Image>().sprite = randomSkill[i].skillPicture;
+		}
 	}
 
 	[ContextMenu("產生經驗值需求資料")]
@@ -82,4 +107,49 @@ public class LevelManager : MonoBehaviour
 	// int i = 0; 初始值 i 預設為 0
 	// i < 10; 當 i 小於 10 會執行迴圈&#xff0c;否則停止迴圈
 	// i++ 每次迴圈執行完內容後會對 i 加 1*/
+
+	public void ClickSkillButton(int indexSkill)
+	{
+		//print($"<color=#6699ff>{indexSkill}</color>");
+		randomSkill[indexSkill].skillLv++;
+		goLvUp.SetActive(false);
+		Time.timeScale = 1;
+
+		if (randomSkill[indexSkill].skillName == "吸取經驗值範圍增加") UpdateAbsorbExpRange();
+		if (randomSkill[indexSkill].skillName == "武器斧頭攻擊") UpdateAxAttack();
+		if (randomSkill[indexSkill].skillName == "武器生成間隔縮短") UpdateAxInterval();
+		if (randomSkill[indexSkill].skillName == "玩家血量增加") UpdatePlayerHp();
+		if (randomSkill[indexSkill].skillName == "移動速度提升") UpdateMoveSpeed();
+	}
+
+	[Header("衝鋒企鵝：圓形碰撞")]
+	public CircleCollider2D playerExpRange;
+
+	private void UpdateAbsorbExpRange()
+	{
+		int lv = dataSkills[0].skillLv - 1;
+		playerExpRange.radius = dataSkills[0].skillValues[lv];
+	}
+	private void UpdateAxAttack()
+	{
+
+	}
+	private void UpdateAxInterval()
+	{
+
+	}
+	private void UpdatePlayerHp()
+	{
+
+	}
+
+	[Header("衝鋒企鵝：控制系統")]
+	public ControlSystem controlSystem;
+
+	private void UpdateMoveSpeed()
+	{
+		int lv = dataSkills[4].skillLv - 1;
+		controlSystem.moveSpeed = dataSkills[4].skillValues[lv];
+	}
+
 }
