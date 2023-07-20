@@ -130,13 +130,20 @@ public class LevelManager : MonoBehaviour
 		int lv = dataSkills[0].skillLv - 1;
 		playerExpRange.radius = dataSkills[0].skillValues[lv];
 	}
+
+	[Header("武器斧頭生成點")]
+	public WeaponSpawn weaponSpawn;
+
 	private void UpdateAxAttack()
 	{
+		int lv = dataSkills[1].skillLv - 1;
+		weaponSpawn.attack = dataSkills[1].skillValues[lv];
 
 	}
 	private void UpdateAxInterval()
 	{
-
+		int lv = dataSkills[2].skillLv - 1;
+		weaponSpawn.interval = dataSkills[2].skillValues[lv];
 	}
 
 	[Header("玩家資料")]

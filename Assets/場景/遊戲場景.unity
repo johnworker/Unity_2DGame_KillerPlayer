@@ -4511,7 +4511,7 @@ GameObject:
   - component: {fileID: 825098151}
   - component: {fileID: 825098152}
   m_Layer: 0
-  m_Name: "\u6B66\u5668\u751F\u6210\u9EDE"
+  m_Name: "\u6B66\u5668\u65A7\u982D\u751F\u6210\u9EDE"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4545,6 +4545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interval: 2
+  attack: 50
   prefabWeapon: {fileID: 4938695909229840453, guid: df71d073cfd18bc4aa61f4754b721468, type: 3}
   power: {x: 100, y: 500}
 --- !u!1 &840604921
@@ -4991,6 +4992,7 @@ MonoBehaviour:
   - 9950
   - 10050
   playerExpRange: {fileID: 866269238}
+  weaponSpawn: {fileID: 825098152}
   dataBasic: {fileID: 11400000, guid: e370f75cb05905149a6456711162fb4c, type: 2}
   controlSystem: {fileID: 866269234}
 --- !u!1001 &974094894

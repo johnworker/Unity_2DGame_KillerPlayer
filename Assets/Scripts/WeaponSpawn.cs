@@ -4,6 +4,8 @@ public class WeaponSpawn : MonoBehaviour
 {
 	[Header("生成間隔"), Range(0, 10)]
 	public float interval = 3f;
+	[Header("武器攻擊"), Range(0, 10000)]
+	public float attack = 50;
 	[Header("生成武器預置物")]
 	public GameObject prefabWeapon;
 	[Header("武器推力")]
