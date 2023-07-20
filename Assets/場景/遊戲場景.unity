@@ -4990,7 +4990,9 @@ MonoBehaviour:
   - 9850
   - 9950
   - 10050
-  playerExpRange: {fileID: 0}
+  playerExpRange: {fileID: 866269238}
+  dataBasic: {fileID: 11400000, guid: e370f75cb05905149a6456711162fb4c, type: 2}
+  controlSystem: {fileID: 866269234}
 --- !u!1001 &974094894
 PrefabInstance:
   m_ObjectHideFlags: 0

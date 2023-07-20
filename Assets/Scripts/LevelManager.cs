@@ -138,9 +138,14 @@ public class LevelManager : MonoBehaviour
 	{
 
 	}
+
+	[Header("玩家資料")]
+	public DataBasic dataBasic;
+
 	private void UpdatePlayerHp()
 	{
-
+		int lv = dataSkills[0].skillLv - 1;
+		dataBasic.hp = dataSkills[0].skillValues[lv];
 	}
 
 	[Header("衝鋒企鵝：控制系統")]
