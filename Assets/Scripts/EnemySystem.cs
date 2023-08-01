@@ -9,6 +9,13 @@ public class EnemySystem : MonoBehaviour
 
 	private Transform player;
 
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = new Color(1, 0, 0.3f, 0.5f);
+		Gizmos.DrawSphere(transform.position, data.attackRange);
+	}
+
+
 	private void Awake()
 	{
 		player = GameObject.Find("衝鋒企鵝").transform;

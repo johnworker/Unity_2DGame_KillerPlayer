@@ -17,3 +17,5 @@ MonoBehaviour:
   moveSpeed: 2
   expProbability: 0.8
   prefabExp: {fileID: 79949784832022163, guid: 6be73678ebf613f4e998cfa5f8936bbd, type: 3}
+  attackRange: 2
+  attackInterval: 2.5
