@@ -4775,6 +4775,7 @@ GameObject:
   - component: {fileID: 866269232}
   - component: {fileID: 866269238}
   - component: {fileID: 866269239}
+  - component: {fileID: 866269240}
   m_Layer: 0
   m_Name: "\u885D\u92D2\u4F01\u9D5D"
   m_TagString: Untagged
@@ -5071,6 +5072,21 @@ MonoBehaviour:
   weaponSpawn: {fileID: 825098152}
   dataBasic: {fileID: 11400000, guid: e370f75cb05905149a6456711162fb4c, type: 2}
   controlSystem: {fileID: 866269234}
+--- !u!114 &866269240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866269231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ae8ed39a8542040aff4ca9f637fb9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: e370f75cb05905149a6456711162fb4c, type: 2}
+  prefabDamage: {fileID: 2875280804899883506, guid: 4bd85ba107ef1bc49ba55c05dc6260bb, type: 3}
+  imgHp: {fileID: 231838130}
 --- !u!1001 &974094894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78183,6 +78199,7 @@ GameObject:
   - component: {fileID: 2005748554}
   - component: {fileID: 2005748553}
   - component: {fileID: 2005748552}
+  - component: {fileID: 2005748556}
   m_Layer: 5
   m_Name: "\u756B\u5E03\u73A9\u5BB6\u8840\u689D"
   m_TagString: Untagged
@@ -78273,6 +78290,20 @@ RectTransform:
   m_AnchoredPosition: {x: -3.9, y: -2.66}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2005748556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005748551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd578ea580b465c489a54ef94ff19d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 866269237}
+  y: -2.2
 --- !u!1001 &2013548026
 PrefabInstance:
   m_ObjectHideFlags: 0
