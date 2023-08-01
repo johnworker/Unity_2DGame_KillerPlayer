@@ -14,8 +14,10 @@ public class DamageEnemy : DamageBasic
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.name.Contains("ชZพน")) 
-		{ 
-			Damage(50);
+		{
+			float damage = collision.gameObject.GetComponent<Weapon>().attack;
+
+			Damage(damage);
 
 		}
 	}

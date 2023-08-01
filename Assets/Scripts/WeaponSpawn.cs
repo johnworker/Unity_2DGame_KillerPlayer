@@ -20,10 +20,19 @@ public class WeaponSpawn : MonoBehaviour
 
 
 		rigWeapon.AddForce(power);
+
+		// this.attack 指定為此腳本 attack , 暗藍色表示可省略文字
+		tempWeapon.GetComponent<Weapon>().attack = this.attack;
 	}
 
 	private void Awake()
 	{
+		InvokeRepeating("SpawnWeapon", 0, interval);
+	}
+
+	public void Restart()
+    {
+		CancelInvoke("SpawnWeapon");
 		InvokeRepeating("SpawnWeapon", 0, interval);
 	}
 }
