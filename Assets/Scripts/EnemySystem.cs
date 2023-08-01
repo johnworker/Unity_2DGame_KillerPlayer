@@ -9,6 +9,8 @@ public class EnemySystem : MonoBehaviour
 
 	private Transform player;
 
+	private float timer;
+
 	private void OnDrawGizmos()
 	{
 		Gizmos.color = new Color(1, 0, 0.3f, 0.5f);
@@ -23,6 +25,16 @@ public class EnemySystem : MonoBehaviour
 
 	private void Update()
 	{
-		transform.position = Vector3.MoveTowards(transform.position, player.position, data.moveSpeed * Time.deltaTime);
+		// Vector3.Distance (計算兩個點的距離)
+		float distance = Vector3.Distance(transform.position, player.position);
+
+		if(distance > data.attackRange)
+        {
+			transform.position = Vector3.MoveTowards(transform.position, player.position, data.moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+			timer += Time.deltaTime;
+        }
 	}
 }
