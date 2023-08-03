@@ -18,11 +18,11 @@ public class DamageBasic : MonoBehaviour
 		hpMax = hp;
 	}
 
-	protected virtual void Damage(float damage)
+	public virtual void Damage(float damage)
 	{
 		hp -= damage;
 
-		GameObject tempDamage = Instantiate(prefabDamage, transform.position, transform.rotation);
+		GameObject tempDamage = Instantiate(prefabDamage, transform.position, Quaternion.identity);
 		// 生成的傷害值物件會儲存在名為 tempDamage 的資料內方便存取
 
 		tempDamage.transform.Find("傷害值文字").GetComponent<TextMeshProUGUI>().text = damage.ToString();
