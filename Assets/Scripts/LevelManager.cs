@@ -127,6 +127,12 @@ public class LevelManager : MonoBehaviour
 	// i < 10; 當 i 小於 10 會執行迴圈&#xff0c;否則停止迴圈
 	// i++ 每次迴圈執行完內容後會對 i 加 1*/
 
+    public void ClickCloseButton()
+    {
+        goLvUp.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     public void ClickSkillButton(int indexSkill)
     {
         //print($"<color=#6699ff>{indexSkill}</color>");
