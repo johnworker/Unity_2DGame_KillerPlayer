@@ -17,4 +17,10 @@ public class SpawnSystem : MonoBehaviour
 	{
 		InvokeRepeating("SpawnEnemy", 0, interval);
 	}
+
+	public void Restart()
+    {
+		CancelInvoke();
+		InvokeRepeating("SpawnEnemy", 0, interval);
+	}
 }

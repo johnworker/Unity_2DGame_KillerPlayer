@@ -9,7 +9,7 @@ public class DataEnemy : DataBasic
 	public float expProbability;
 	[Header("±¼¸¨¸gÅç­È¹w»sª«")]
 	public GameObject prefabExp;
-	[Header("§ğÀ»½d³ò"), Range(0, 5)]
+	[Header("§ğÀ»½d³ò"), Range(0, 50)]
 	public float attackRange = 2f;
 	[Header("§ğÀ»¶¡¹j"), Range(0, 1)]
 	public float attackInterval = 2.5f;

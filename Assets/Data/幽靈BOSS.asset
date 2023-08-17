@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2391745e961654a40916e2f9db21c341, type: 3}
-  m_Name: "\u53F2\u840A\u59C6"
+  m_Name: "\u5E7D\u9748BOSS"
   m_EditorClassIdentifier: 
-  hp: 150
-  attack: 50
-  moveSpeed: 2
-  expProbability: 0.8
+  hp: 10000
+  attack: 1000
+  moveSpeed: 5
+  expProbability: 0
   prefabExp: {fileID: 79949784832022163, guid: 6be73678ebf613f4e998cfa5f8936bbd, type: 3}
-  attackRange: 2
-  attackInterval: 2.5
+  attackRange: 10
+  attackInterval: 1

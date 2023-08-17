@@ -1,19 +1,23 @@
-using UnityEngine;
+ï»¿using UnityEngine;
+using UnityEngine.Events;
 
 public class DamageEnemy : DamageBasic
 {
 	private DataEnemy dataEnemy;
 
+	[Header("æ­»äº¡äº‹ä»¶")]
+	public UnityEvent onDead;
+
 	private void Start()
 	{
-		// ±N¸ê®ÆÂà¬°¼Ä¤H¸ê®Æ
+		// å°‡è³‡æ–™è½‰ç‚ºæ•µäººè³‡æ–™
 		dataEnemy = (DataEnemy)data;
 		//print(dataEnemy.expProbability);
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.name.Contains("ªZ¾¹")) 
+		if (collision.gameObject.name.Contains("æ­¦å™¨")) 
 		{
 			float damage = collision.gameObject.GetComponent<Weapon>().attack;
 
@@ -24,7 +28,8 @@ public class DamageEnemy : DamageBasic
 
 	protected override void Dead()
 	{
-		base.Dead();        // ¤÷Ãþ§O­ì¦³ªº¤º®e
+		base.Dead();        // çˆ¶é¡žåˆ¥åŽŸæœ‰çš„å…§å®¹
+		onDead.Invoke();
 		Destroy(gameObject);
 
 		if(Random.value < dataEnemy.expProbability)
