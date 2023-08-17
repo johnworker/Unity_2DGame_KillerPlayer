@@ -1,11 +1,11 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using TMPro;
 
 public class DamageBasic : MonoBehaviour
 {
-	[Header("¸ê®Æ")]
+	[Header("è³‡æ–™")]
 	public DataBasic data;
-	[Header("¶Ë®`­È¹w¸mª«")]
+	[Header("å‚·å®³å€¼é ç½®ç‰©")]
 	public GameObject prefabDamage;
 
 
@@ -23,27 +23,27 @@ public class DamageBasic : MonoBehaviour
 		hp -= damage;
 
 		GameObject tempDamage = Instantiate(prefabDamage, transform.position, Quaternion.identity);
-		// ¥Í¦¨ªº¶Ë®`­Èª«¥ó·|Àx¦s¦b¦W¬° tempDamage ªº¸ê®Æ¤º¤è«K¦s¨ú
+		// ç”Ÿæˆçš„å‚·å®³å€¼ç‰©ä»¶æœƒå„²å­˜åœ¨åç‚º tempDamage çš„è³‡æ–™å…§æ–¹ä¾¿å­˜å–
 
-		tempDamage.transform.Find("¶Ë®`­È¤å¦r").GetComponent<TextMeshProUGUI>().text = damage.ToString();
-		// tempDamage.transform.Find("¶Ë®`­È¤å¦r")
-		// §ä¨ì¥Í¦¨ªº¶Ë®`­Èª«¥ó ©³¤U ¦W¬°&#xff02;¶Ë®`­È¤å¦r&#xff02;ªº¤lª«¥ó
+		tempDamage.transform.Find("å‚·å®³å€¼æ–‡å­—").GetComponent<TextMeshProUGUI>().text = damage.ToString();
+		// tempDamage.transform.Find("å‚·å®³å€¼æ–‡å­—")
+		// æ‰¾åˆ°ç”Ÿæˆçš„å‚·å®³å€¼ç‰©ä»¶ åº•ä¸‹ åç‚º&#xff02;å‚·å®³å€¼æ–‡å­—&#xff02;çš„å­ç‰©ä»¶
 
 		// GetComponent<TextMeshProUGUI>().text = damage.ToString();
-		// ¨ú±o¤lª«¥ó¨­¤Wªº<TextMeshProUGUI> ¤å¦r¤¸¥ó ¨Ã§ó·s¤å¦r¬° ¶Ë®`­È
+		// å–å¾—å­ç‰©ä»¶èº«ä¸Šçš„<TextMeshProUGUI> æ–‡å­—å…ƒä»¶ ä¸¦æ›´æ–°æ–‡å­—ç‚º å‚·å®³å€¼
 
-		// ¿é¥X½Ö¨ü¶Ë¡A³Ñ¦h¤Ö¦å¶q¡C
+		// è¼¸å‡ºèª°å—å‚·ï¼Œå‰©å¤šå°‘è¡€é‡ã€‚
 
 		Destroy(tempDamage, .5f);
 
-		print($"<color=#ffee64>{gameObject.name} ¦å¶q³Ñ¤U¡G{hp}</color>");
+		print($"<color=#ffee64>{gameObject.name} è¡€é‡å‰©ä¸‹ï¼š{hp}</color>");
 
 		if (hp <= 0) Dead();
 	}
 
 	protected virtual void Dead()
 	{
-		// ¿é¥X½Ö¦º¤`
-		print($"<color=#ffee64>{gameObject.name} ¦º¤`</color>");
+		// è¼¸å‡ºèª°æ­»äº¡
+		print($"<color=#ffee64>{gameObject.name} æ­»äº¡</color>");
 	}
 }

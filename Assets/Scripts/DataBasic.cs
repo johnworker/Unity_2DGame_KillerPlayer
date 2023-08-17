@@ -1,14 +1,14 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Leo/Data Basic")]
 public class DataBasic : ScriptableObject
 {
-	[Header("¦å¶q"), Range(0, 10000)]
+	[Header("è¡€é‡"), Range(0, 10000)]
 	public float hp;
-	[Header("§ğÀ»¤O"), Range(0, 1000)]
+	[Header("æ”»æ“ŠåŠ›"), Range(0, 1000)]
 	public float attack;
-	[Header("²¾°Ê³t«×"), Range(0, 100)]
+	[Header("ç§»å‹•é€Ÿåº¦"), Range(0, 100)]
 	public float moveSpeed;
 }

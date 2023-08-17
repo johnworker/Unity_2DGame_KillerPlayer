@@ -1,16 +1,16 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Leo/Data Skill")]
 public class DataSkill : ScriptableObject
 {
-    [Header("§Ş¯à¦WºÙ")]
+    [Header("æŠ€èƒ½åç¨±")]
     public string skillName;
-    [Header("§Ş¯à¹Ï¤ù")]
+    [Header("æŠ€èƒ½åœ–ç‰‡")]
     public Sprite skillPicture;
-    [Header("§Ş¯à´y­z"),TextArea(2,5)]
+    [Header("æŠ€èƒ½æè¿°"),TextArea(2,5)]
     public string skillDescription;
-    [Header("§Ş¯àµ¥¯Å")]
+    [Header("æŠ€èƒ½ç­‰ç´š")]
     public int skillLv;
-    [Header("§Ş¯à¼Æ­È")]
+    [Header("æŠ€èƒ½æ•¸å€¼")]
     public float[] skillValues;
 }

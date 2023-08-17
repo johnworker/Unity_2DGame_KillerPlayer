@@ -1,16 +1,16 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Leo/Data Enemy")]
 public class DataEnemy : DataBasic
 {
-	[Header("±¼¸¨¸gÅç­È¾÷²v"), Range(0, 1)]
+	[Header("æ‰è½ç¶“é©—å€¼æ©Ÿç‡"), Range(0, 1)]
 	public float expProbability;
-	[Header("±¼¸¨¸gÅç­È¹w»sª«")]
+	[Header("æ‰è½ç¶“é©—å€¼é è£½ç‰©")]
 	public GameObject prefabExp;
-	[Header("§ğÀ»½d³ò"), Range(0, 50)]
+	[Header("æ”»æ“Šç¯„åœ"), Range(0, 50)]
 	public float attackRange = 2f;
-	[Header("§ğÀ»¶¡¹j"), Range(0, 1)]
+	[Header("æ”»æ“Šé–“éš”"), Range(0, 1)]
 	public float attackInterval = 2.5f;
 }
