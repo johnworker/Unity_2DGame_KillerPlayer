@@ -8,11 +8,16 @@ public class DamageEnemy : DamageBasic
 	[Header("死亡事件")]
 	public UnityEvent onDead;
 
+	private DamagePlayer damagePlayer;
+
 	private void Start()
 	{
 		// 將資料轉為敵人資料
 		dataEnemy = (DataEnemy)data;
 		//print(dataEnemy.expProbability);
+
+		damagePlayer = GameObject.Find("衝鋒企鵝").GetComponent<DamagePlayer>();
+		if(name.Contains("BOSS")) onDead.AddListener(() => damagePlayer.Win());
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
