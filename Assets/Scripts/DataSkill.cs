@@ -13,4 +13,9 @@ public class DataSkill : ScriptableObject
     public int skillLv;
     [Header("技能數值")]
     public float[] skillValues;
+
+    private void OnEnable()
+    {
+        skillLv = 1;
+    }
 }
