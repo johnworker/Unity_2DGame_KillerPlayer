@@ -75,6 +75,9 @@ public class LevelManager : MonoBehaviour
 
     private void LevelUp()
     {
+        AudioClip sound = SoundManager.instance.soundLvUp;
+        SoundManager.instance.PlaySound(sound, 0.8f, 1.2f);
+
         goLvUp.SetActive(true);
         Time.timeScale = 0;
 
@@ -135,6 +138,9 @@ public class LevelManager : MonoBehaviour
 
     public void ClickSkillButton(int indexSkill)
     {
+        AudioClip sound = SoundManager.instance.soundSkillLvUp;
+        SoundManager.instance.PlaySound(sound, 0.8f, 1.2f);
+
         //print($"<color=#6699ff>{indexSkill}</color>");
         randomSkill[indexSkill].skillLv++;
         goLvUp.SetActive(false);

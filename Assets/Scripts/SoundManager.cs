@@ -19,8 +19,11 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource aud;
 
+    public static SoundManager instance;
+
     private void Awake()
     {
+        instance = this;
         aud = GetComponent<AudioSource>();
     }
 

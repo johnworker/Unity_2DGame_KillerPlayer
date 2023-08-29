@@ -26,13 +26,21 @@ public class DamagePlayer : DamageBasic
     {
         // 繼承 DataBasic 的資料定義和方法運算
         base.Damage(damage);
-        
+
+        AudioClip sound = SoundManager.instance.soundPlayerHurt;
+        SoundManager.instance.PlaySound(sound, 0.8f, 1.2f);
+
+
         imgHp.fillAmount = hp / hpMax;
     }
 
     protected override void Dead()
     {
         base.Dead();
+
+        AudioClip sound = SoundManager.instance.soundPlayerDead;
+        SoundManager.instance.PlaySound(sound, 0.8f, 1.2f);
+
         controlSystem.enabled = false;
         weaponSpawn.Stop();
         textFinal.text = "你已經死了...";
