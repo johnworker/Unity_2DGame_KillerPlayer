@@ -38,6 +38,8 @@ public class DamagePlayer : DamageBasic
     {
         base.Dead();
 
+        if (goFinal.activeInHierarchy) return;
+
         AudioClip sound = SoundManager.instance.soundPlayerDead;
         SoundManager.instance.PlaySound(sound, 0.8f, 1.2f);
 
@@ -49,6 +51,8 @@ public class DamagePlayer : DamageBasic
 
     public void Win()
     {
+        if (goFinal.activeInHierarchy) return;
+
         textFinal.text = "恭喜過關";
         goFinal.SetActive(true);
     }
