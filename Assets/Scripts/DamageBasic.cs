@@ -1,49 +1,38 @@
-﻿using UnityEngine;
-using TMPro;
+﻿using TMPro;
+using UnityEngine;
 
 public class DamageBasic : MonoBehaviour
 {
-	[Header("資料")]
-	public DataBasic data;
-	[Header("傷害值預置物")]
-	public GameObject prefabDamage;
+    [Header("資料")]
+    public DataBasic data;
+    [Header("傷害值預製物")]
+    public GameObject prefabDamage;
 
+    protected float hp;
+    protected float hpMax;
 
-	protected float hp;
-	protected float hpMax;
+    private void Awake()
+    {
+        hp = data.hp;
+        hpMax = hp;
+    }
 
-	private void Awake()
-	{
-		hp = data.hp;
-		hpMax = hp;
-	}
+    public virtual void Damage(float damage)
+    {
+        hp -= damage;
 
-	public virtual void Damage(float damage)
-	{
-		hp -= damage;
+        GameObject tempDamage = Instantiate(prefabDamage, transform.position, Quaternion.identity);
+        tempDamage.transform.Find("傷害值文字").GetComponent<TextMeshProUGUI>().text = damage.ToString();
 
-		GameObject tempDamage = Instantiate(prefabDamage, transform.position, Quaternion.identity);
-		// 生成的傷害值物件會儲存在名為 tempDamage 的資料內方便存取
+        Destroy(tempDamage, 1.5f);
 
-		tempDamage.transform.Find("傷害值文字").GetComponent<TextMeshProUGUI>().text = damage.ToString();
-		// tempDamage.transform.Find("傷害值文字")
-		// 找到生成的傷害值物件 底下 名為&#xff02;傷害值文字&#xff02;的子物件
+        // print($"<color=#ffee66>{gameObject.name} 血量剩下：{hp}</color>");
 
-		// GetComponent<TextMeshProUGUI>().text = damage.ToString();
-		// 取得子物件身上的<TextMeshProUGUI> 文字元件 並更新文字為 傷害值
+        if (hp <= 0) Dead();
+    }
 
-		// 輸出誰受傷，剩多少血量。
-
-		Destroy(tempDamage, .5f);
-
-		print($"<color=#ffee64>{gameObject.name} 血量剩下：{hp}</color>");
-
-		if (hp <= 0) Dead();
-	}
-
-	protected virtual void Dead()
-	{
-		// 輸出誰死亡
-		print($"<color=#ffee64>{gameObject.name} 死亡</color>");
-	}
+    protected virtual void Dead()
+    {
+         // print($"<color=#ff9966>{gameObject.name} 死亡</color>");
+    }
 }

@@ -4,34 +4,41 @@ using UnityEngine.UI;
 
 public class DamagePlayer : DamageBasic
 {
+    [Header("血條")]
     public Image imgHp;
-
-    [Header("控制系統")]
+    [Header("控制系統：爆走企鵝")]
     public ControlSystem controlSystem;
-    [Header("武器生成點")]
-    public WeaponSpawn weaponSpawn;
+    [Header("武器系統：武器啤酒生成點")]
+    public WeaponSystem weaponSystem;
     [Header("結束畫面")]
     public GameObject goFinal;
     [Header("結束標題")]
     public TextMeshProUGUI textFinal;
+    [Header("血量文字")]
+    public TextMeshProUGUI textHp;
 
-
-    /*
     private void Start()
     {
-        Damage(50);
-    }*/
+        textHp.text = $"{hp}/{hpMax}";
+    }
 
     public override void Damage(float damage)
     {
-        // 繼承 DataBasic 的資料定義和方法運算
         base.Damage(damage);
 
         AudioClip sound = SoundManager.instance.soundPlayerHurt;
-        SoundManager.instance.PlaySound(sound, 0.8f, 1.2f);
-
+        SoundManager.instance.PlaySound(sound, 0.8f, 1.5f);
 
         imgHp.fillAmount = hp / hpMax;
+        textHp.text = $"{hp}/{hpMax}";
+    }
+
+    public void LevelUp()
+    {
+        hp = data.hp;
+        hpMax = hp;
+        imgHp.fillAmount = hp / hpMax;
+        textHp.text = $"{hp}/{hpMax}";
     }
 
     protected override void Dead()
@@ -41,10 +48,10 @@ public class DamagePlayer : DamageBasic
         if (goFinal.activeInHierarchy) return;
 
         AudioClip sound = SoundManager.instance.soundPlayerDead;
-        SoundManager.instance.PlaySound(sound, 0.8f, 1.2f);
+        SoundManager.instance.PlaySound(sound, 0.8f, 1.5f);
 
         controlSystem.enabled = false;
-        weaponSpawn.Stop();
+        weaponSystem.Stop();
         textFinal.text = "你已經死了...";
         goFinal.SetActive(true);
     }

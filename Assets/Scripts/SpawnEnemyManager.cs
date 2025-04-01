@@ -23,7 +23,6 @@ public class SpawnEnemyManager : MonoBehaviour
 
         if (timer >= dataSpawnEnemys[index].timeToSpawn)
         {
-
             if (index == dataSpawnEnemys.Length - 1)
             {
                 int random = Random.Range(0, spawnSystems.Length);
@@ -33,7 +32,6 @@ public class SpawnEnemyManager : MonoBehaviour
                 return;
             }
 
-
             for (int i = 0; i < spawnSystems.Length; i++)
             {
                 spawnSystems[i].prefabEnemy = dataSpawnEnemys[index].prefabEnemy;
@@ -42,8 +40,7 @@ public class SpawnEnemyManager : MonoBehaviour
             }
 
             index++;
-
-            print("生成的波數：" + index);
+            // print("生成的波數：" + index);
         }
     }
 }

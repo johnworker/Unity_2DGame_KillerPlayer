@@ -17,7 +17,7 @@ public class SoundManager : MonoBehaviour
     [Header("發射武器")]
     public AudioClip soundFireWeapon;
 
-    public AudioSource aud;
+    private AudioSource aud;
 
     public static SoundManager instance;
 
