@@ -23,6 +23,9 @@ public class WeaponSpawn : MonoBehaviour
 
 		// this.attack 指定為此腳本 attack , 暗藍色表示可省略文字
 		tempWeapon.GetComponent<Weapon>().attack = this.attack;
+
+		AudioClip sound = SoundManager.instance.soundFireWeapon;
+		SoundManager.instance.PlaySound(sound, 0.8f, 1.2f);
 	}
 
 	private void Awake()

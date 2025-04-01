@@ -28,12 +28,19 @@ public class DamageEnemy : DamageBasic
 
 			Damage(damage);
 
+			AudioClip sound = SoundManager.instance.soundEnemyHurt;
+			SoundManager.instance.PlaySound(sound, 0.8f, 1.2f);
+
 		}
 	}
 
 	protected override void Dead()
 	{
 		base.Dead();        // 父類別原有的內容
+
+		AudioClip sound = SoundManager.instance.soundEnemyDead;
+		SoundManager.instance.PlaySound(sound, 0.8f, 1.2f);
+
 		onDead.Invoke();
 		Destroy(gameObject);
 
