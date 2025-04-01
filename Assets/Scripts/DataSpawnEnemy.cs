@@ -7,6 +7,6 @@ public class DataSpawnEnemy : ScriptableObject
     public float timeToSpawn;
     [Header("要生成的怪物")]
     public GameObject prefabEnemy;
-    [Header("生成怪物的間隔"), Range(0, 5)]
+    [Header("生成怪物的間隔"), Range(0, 600)]
     public float intervalSpawn;
 }
