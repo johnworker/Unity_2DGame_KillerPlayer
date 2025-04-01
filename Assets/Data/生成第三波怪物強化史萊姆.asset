@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: "\u751F\u6210\u7B2C\u4E09\u6CE2\u602A\u7269\u5F37\u5316\u53F2\u840A\u59C6"
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   timeToSpawn: 30
 =======
   timeToSpawn: 60
 >>>>>>> 14d33fc621031b7dc6c4ea322d6ac1c2ad4cdfaf
+=======
+  timeToSpawn: 6
+>>>>>>> parent of 14d33fc (調整)
   prefabEnemy: {fileID: 4765694758499003355, guid: 03b5ac9d5514444468bbce10899b8621, type: 3}
   intervalSpawn: 30
