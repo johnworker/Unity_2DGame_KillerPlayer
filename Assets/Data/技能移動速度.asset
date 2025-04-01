@@ -9,16 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6814c218c6d8bf548adcf0df11f1fd4e, type: 3}
+  m_Script: {fileID: 11500000, guid: a30a5285b85eef84dbc9d6b0d0588195, type: 3}
   m_Name: "\u6280\u80FD\u79FB\u52D5\u901F\u5EA6"
   m_EditorClassIdentifier: 
-  skillName: "\u79FB\u52D5\u901F\u5EA6\u63D0\u5347"
-  skillPicture: {fileID: 21300000, guid: add05edf4b9251d44a1b8b8af97ece9a, type: 3}
-  skillDescription: "\u63D0\u5347\u79FB\u52D5\u901F\u5EA6\uFF0C\u6BCF\u5347\u4E00\u7D1A\u63D0\u53472\u9EDE"
-  skillLv: 5
+  skillName: "\u79FB\u52D5\u901F\u5EA6"
+  skillPicture: {fileID: 21300000, guid: 62ccf471231f80c41ab4606e72b3e1c6, type: 3}
+  skillDescription: "\u63D0\u5347\u79FB\u52D5\u901F\u5EA6\uFF0C\u6BCF\u500B\u7B49\u7D1A\u52A0
+    0.5 \u9EDE\u79FB\u52D5\u901F\u5EA6\u3002"
+  skillLv: 1
   skillValues:
+  - 4
+  - 4.5
   - 5
+  - 5.5
+  - 6
+  - 6.5
   - 7
-  - 9
-  - 11
-  - 13
+  - 7.5
+  - 8
+  - 8.5

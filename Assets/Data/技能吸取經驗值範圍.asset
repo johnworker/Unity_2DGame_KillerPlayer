@@ -9,16 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6814c218c6d8bf548adcf0df11f1fd4e, type: 3}
+  m_Script: {fileID: 11500000, guid: a30a5285b85eef84dbc9d6b0d0588195, type: 3}
   m_Name: "\u6280\u80FD\u5438\u53D6\u7D93\u9A57\u503C\u7BC4\u570D"
   m_EditorClassIdentifier: 
-  skillName: "\u5438\u53D6\u7D93\u9A57\u503C\u7BC4\u570D\u589E\u52A0"
-  skillPicture: {fileID: 21300000, guid: 55c73e2c4de123c49a5941fd5ce1ab3f, type: 3}
-  skillDescription: "\u63D0\u5347\u5438\u53D6\u7D93\u9A57\u503C\u7BC4\u570D\uFF0C\u6BCF\u500B\u7B49\u7D1A\u52A01\u7684\u5438\u53D6\u7BC4\u570D"
-  skillLv: 5
+  skillName: "\u5438\u53D6\u7D93\u9A57\u503C\u7BC4\u570D"
+  skillPicture: {fileID: 21300000, guid: 43a1944cb8c684e4e90cc10a3fffbfc5, type: 3}
+  skillDescription: "\u63D0\u5347\u5438\u53D6\u7D93\u9A57\u503C\u7BC4\u570D\uFF0C\u6BCF\u500B\u7B49\u7D1A\u589E\u52A0
+    1 \u7684\u5438\u53D6\u7BC4\u570D\u3002"
+  skillLv: 1
   skillValues:
   - 3
   - 4
   - 5
   - 6
   - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
